@@ -24,7 +24,7 @@ import io.swagger.v3.oas.annotations.responses.ApiResponses;
                                 @ExampleObject(
                                         value = "{\"dateTime\":\"19/02/2025 20:28:01\"," +
                                                 "\"httpStatus\":500," +
-                                                "\"mensagemDeErro\":\"Error when making the request\"}"
+                                                "\"erroMessage\":\"Error when making the request\"}"
                                 )
                         })
         })
