@@ -8,7 +8,7 @@ import java.util.Objects;
 
 @RestController
 @RequestMapping("events")
-public class EventController {
+public class EventController implements EventOperations {
     private final EventService service;
 
     public EventController(EventService service) {
