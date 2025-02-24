@@ -10,7 +10,11 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @RequestMapping("subscription")
 public class SubscriptionController implements SubscriptionOperations {
-    private SubscriptionService service;
+    private final SubscriptionService service;
+
+    public SubscriptionController(SubscriptionService service) {
+        this.service = service;
+    }
 
     @PostMapping({"/{prettyName}", "/{prettyName}/{userId}"})
     public ResponseEntity<?> createSubscription(@PathVariable String prettyName,
