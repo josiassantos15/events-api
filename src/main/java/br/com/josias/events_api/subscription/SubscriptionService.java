@@ -7,24 +7,18 @@ import br.com.josias.events_api.event.Event;
 import br.com.josias.events_api.event.EventRepository;
 import br.com.josias.events_api.user.User;
 import br.com.josias.events_api.user.UserRepository;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.stream.IntStream;
 
 @Service
+@RequiredArgsConstructor
 public class SubscriptionService {
     private final EventRepository eventRepository;
     private final UserRepository userRepository;
     private final SubscriptionRepository subscriptionRepository;
-
-    public SubscriptionService(EventRepository eventRepository,
-                               UserRepository userRepository,
-                               SubscriptionRepository subscriptionRepository) {
-        this.eventRepository = eventRepository;
-        this.userRepository = userRepository;
-        this.subscriptionRepository = subscriptionRepository;
-    }
 
     public SubscriptionResponse createNewSubscription(String eventName, User user, Integer userId) {
         Event evt = eventRepository.findByPrettyName(eventName);

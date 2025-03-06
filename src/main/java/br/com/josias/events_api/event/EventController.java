@@ -1,5 +1,6 @@
 package br.com.josias.events_api.event;
 
+import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -7,13 +8,10 @@ import java.util.List;
 import java.util.Objects;
 
 @RestController
+@RequiredArgsConstructor
 @RequestMapping("events")
 public class EventController implements EventOperations {
     private final EventService service;
-
-    public EventController(EventService service) {
-        this.service = service;
-    }
 
     @PostMapping()
     public Event addNewEvent(@RequestBody Event newEvent) {

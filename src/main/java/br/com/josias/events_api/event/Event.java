@@ -1,12 +1,19 @@
 package br.com.josias.events_api.event;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
 
-
+@Getter
+@Setter
 @Entity
+@NoArgsConstructor
+@AllArgsConstructor
 @Table(name = "tbl_event")
 public class Event {
     @Id
@@ -37,20 +44,5 @@ public class Event {
 
     @Column(name = "end_time")
     private LocalTime endTime;
-
-    public Integer getEventId() {
-        return eventId;
-    }
-    public String getTitle() {
-        return title;
-    }
-
-    public String getPrettyName() {
-        return prettyName;
-    }
-
-    public void setPrettyName(String prettyName) {
-        this.prettyName = prettyName;
-    }
 
 }

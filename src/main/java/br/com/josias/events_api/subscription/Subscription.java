@@ -3,8 +3,16 @@ package br.com.josias.events_api.subscription;
 import br.com.josias.events_api.event.Event;
 import br.com.josias.events_api.user.User;
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
+@Getter
+@Setter
 @Entity
+@NoArgsConstructor
+@AllArgsConstructor
 @Table(name = "tbl_subscription")
 public class Subscription {
     @Id
@@ -24,36 +32,4 @@ public class Subscription {
     @JoinColumn(name = "indication_user_id", nullable = true)
     private User indication;
 
-
-    public Integer getSubscriptionNumber() {
-        return subscriptionNumber;
-    }
-
-    public void setSubscriptionNumber(Integer subscriptionNumber) {
-        this.subscriptionNumber = subscriptionNumber;
-    }
-
-    public Event getEvent() {
-        return event;
-    }
-
-    public void setEvent(Event event) {
-        this.event = event;
-    }
-
-    public User getSubscriber() {
-        return subscriber;
-    }
-
-    public void setSubscriber(User subscriber) {
-        this.subscriber = subscriber;
-    }
-
-    public User getIndication() {
-        return indication;
-    }
-
-    public void setIndication(User indication) {
-        this.indication = indication;
-    }
 }
